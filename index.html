@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TS무역 | 2026 스마트공방 공급기업</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1F4A;--blue:#1A4FBE;
+  --light:#F4F7FF;--text:#1C2B4A;--muted:#6B7A99;
+  --border:#D6DEF2;--white:#fff;
+}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased}
+.lp{width:100%}
+
+
+
+/* SECTION */
+.section{padding:40px 0}
+.section .inner{width:min(1200px, calc(100% - 96px));margin:0 auto}
+.section-alt{background:var(--light)}
+.sec-label{font-size:10px;font-weight:700;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.sec-title{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.sec-desc{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.7}
+
+/* BROCHURE BTN */
+.brochure-bar{display:flex;align-items:center;justify-content:space-between;background:var(--light);border:1.5px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:28px;gap:16px;flex-wrap:wrap}
+.brochure-bar-left{display:flex;align-items:center;gap:12px}
+.brochure-icon{font-size:24px;line-height:1}
+.brochure-text{}
+.brochure-text strong{display:block;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px}
+.brochure-text span{font-size:12px;color:var(--muted)}
+.btn-brochure{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:11px 20px;border-radius:7px;text-decoration:none;white-space:nowrap;transition:opacity .2s}
+.btn-brochure:hover{opacity:.85}
+
+/* TABS */
+.cat-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.cat-tab{padding:6px 16px;border-radius:20px;border:1px solid var(--border);font-size:13px;cursor:pointer;background:#fff;color:var(--muted);transition:all .2s;font-family:'Noto Sans KR',sans-serif}
+.cat-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.cat-tab:hover:not(.active){border-color:var(--blue);color:var(--blue)}
+
+/* STATUS */
+.eq-status{text-align:center;padding:48px 20px;color:var(--muted);font-size:14px}
+.spin{display:inline-block;width:22px;height:22px;border:2px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* EQ GRID */
+.eq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.eq-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:box-shadow .2s,transform .2s}
+.eq-card:hover{box-shadow:0 4px 20px rgba(11,31,74,.09);transform:translateY(-2px)}
+.eq-card-img{height:150px;background:#f7f7f7;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border);overflow:hidden}
+.eq-card-img img{width:100%;height:100%;object-fit:contain;padding:12px}
+.eq-emoji{font-size:40px}
+.eq-card-body{padding:14px 16px}
+.eq-cat-tag{font-size:10px;font-weight:700;color:var(--blue);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.eq-name{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:3px;line-height:1.3}
+.eq-model{font-size:12px;color:var(--muted)}
+
+/* CONTACT */
+.contact-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:28px 32px;display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}
+.contact-avatar{width:52px;height:52px;border-radius:50%;background:var(--light);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:var(--blue);flex-shrink:0}
+.contact-info{flex:1}
+.contact-company{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.contact-name{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:14px}
+.contact-rows{display:flex;flex-direction:column;gap:9px;margin-bottom:20px}
+.contact-row{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.contact-row a{color:var(--blue);text-decoration:none;font-weight:500}
+.contact-row a:hover{text-decoration:underline}
+.btn-apply{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-weight:700;font-size:14px;padding:13px 24px;border-radius:8px;text-decoration:none;transition:opacity .2s}
+.btn-apply:hover{opacity:.88}
+
+/* FOOTER */
+.footer{background:var(--navy);color:rgba(255,255,255,.45);font-size:12px;padding:24px 0;text-align:center;line-height:2}
+.footer .inner{width:min(1200px, calc(100% - 96px));margin:0 auto;padding:0 48px}
+.footer strong{color:rgba(255,255,255,.8)}
+@media(max-width:768px){.section .inner,.footer .inner{width:calc(100% - 40px);padding:0}}
+</style>
+<style>
+html, body { width: 100%; min-width: 0; overflow-x: hidden; }
+</style>
+</head>
+<body>
+<div class="lp">
+  <!-- EQUIPMENT -->
+  <div class="section"><div class="inner">
+    <div class="sec-label">장비 라인업</div>
+    <div class="sec-title">TS무역 장비 품목</div>
+    <div class="sec-desc">카테고리를 선택해 원하는 장비를 확인하세요. 상세 스펙은 브로셔를 참고해 주세요.</div>
+
+    <div class="brochure-bar">
+      <div class="brochure-bar-left">
+        <div class="brochure-icon">📄</div>
+        <div class="brochure-text">
+          <strong>TS무역 통합 브로셔</strong>
+          <span>전 장비 스펙 및 상세 정보 수록</span>
+        </div>
+      </div>
+      <a class="btn-brochure" href="BROCHURE_LINK_HERE" target="_blank">다운로드 →</a>
+    </div>
+
+    <div class="cat-tabs" id="cat-tabs">
+      <div class="cat-tab active" data-cat="all">전체</div>
+      <div class="cat-tab" data-cat="cnc_cut">CNC재단기</div>
+      <div class="cat-tab" data-cat="edgeband">엣지밴딩기</div>
+      <div class="cat-tab" data-cat="drill">6면드릴</div>
+      <div class="cat-tab" data-cat="boring">CNC 사이드보링기</div>
+      <div class="cat-tab" data-cat="nesting">네스팅재단기</div>
+    </div>
+    <div id="eq-container">
+      <div class="eq-status"><div class="spin"></div><br>장비 정보를 불러오는 중...</div>
+    </div>
+  </div></div>
+
+  <!-- CONTACT -->
+  <div class="section section-alt"><div class="inner">
+    <div class="sec-label">사업 신청 문의</div>
+    <div class="sec-title">궁금한 점이 있으신가요?</div>
+    <div class="sec-desc">장비 선택부터 보조금 신청까지 담당자가 직접 도와드립니다.</div>
+    <div class="contact-card">
+      <div class="contact-avatar">김</div>
+      <div class="contact-info">
+        <div class="contact-company">YC코퍼레이션</div>
+        <div class="contact-name">김유천 대표</div>
+        <div class="contact-rows">
+          <div class="contact-row">
+            <span style="font-size:15px;line-height:1">📞</span>
+            <a href="tel:01091819077">010-9181-9077</a>
+          </div>
+          <div class="contact-row">
+            <span style="font-size:15px;line-height:1">✉️</span>
+            <a href="mailto:yc@ycgroup.co.kr">yc@ycgroup.co.kr</a>
+          </div>
+        </div>
+        <a class="btn-apply" href="https://wkf.ms/4ujSpye" target="_blank">2026 스마트제조 지원사업 신청하기 →</a>
+      </div>
+    </div>
+  </div></div>
+
+  <!-- FOOTER -->
+  <div class="footer"><div class="inner">
+    <strong>TS무역</strong><br>
+    2026년도 소공인 스마트제조지원(스마트공방)사업 공급기업<br>
+    본 페이지는 YC코퍼레이션 스마트웨어 파트너 안내 페이지입니다.
+  </div></div>
+
+</div>
+<script>
+const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTiOCHVMU_t7zdsvmcwpETD2ySpSs-kdEqhZAT6BYH0s87rBzrth3Qmh_aRR6YDnP4FpEriCxoAJbQX/pub?gid=0&single=true&output=csv';
+const CAT_LABEL = {cnc_cut:'CNC재단기',edgeband:'엣지밴딩기',drill:'6면드릴',boring:'CNC 사이드보링기',nesting:'네스팅재단기'};
+const CAT_EMOJI = {cnc_cut:'✂️',edgeband:'🪵',drill:'🔩',boring:'⚙️',nesting:'📐'};
+
+let allEquip = [];
+let activeCat = 'all';
+
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const headers = lines[0].split(',').map(h => h.replace(/^"|"$/g,'').trim());
+  return lines.slice(1).map(line => {
+    const cols = [];
+    let cur = '', inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      if (line[i] === '"') { inQ = !inQ; }
+      else if (line[i] === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      else { cur += line[i]; }
+    }
+    cols.push(cur.trim());
+    const obj = {};
+    headers.forEach((h, i) => obj[h] = (cols[i] || '').replace(/^"|"$/g,'').trim());
+    return obj;
+  }).filter(r => r.category && r.name);
+}
+
+function renderCards(data) {
+  const filtered = activeCat === 'all' ? data : data.filter(d => d.category === activeCat);
+  const container = document.getElementById('eq-container');
+  if (!filtered.length) {
+    container.innerHTML = '<div class="eq-status">해당 카테고리의 장비가 없습니다.</div>';
+    return;
+  }
+  const grid = document.createElement('div');
+  grid.className = 'eq-grid';
+  filtered.forEach(eq => {
+    const card = document.createElement('div');
+    card.className = 'eq-card';
+    const emoji = CAT_EMOJI[eq.category] || '🔩';
+    const imgContent = eq.image_url
+      ? `<img src="${eq.image_url}" alt="${eq.name}" onerror="this.parentNode.innerHTML='<span class=eq-emoji>${emoji}</span>'">`
+      : `<span class="eq-emoji">${emoji}</span>`;
+    card.innerHTML = `
+      <div class="eq-card-img">${imgContent}</div>
+      <div class="eq-card-body">
+        <div class="eq-cat-tag">${CAT_LABEL[eq.category] || eq.category}</div>
+        <div class="eq-name">${eq.name}</div>
+        <div class="eq-model">${eq.model}</div>
+      </div>`;
+    grid.appendChild(card);
+  });
+  container.innerHTML = '';
+  container.appendChild(grid);
+}
+
+async function loadData() {
+  try {
+    const res = await fetch(CSV_URL);
+    if (!res.ok) throw new Error();
+    const text = await res.text();
+    allEquip = parseCSV(text);
+    renderCards(allEquip);
+  } catch(e) {
+    document.getElementById('eq-container').innerHTML =
+      '<div class="eq-status">장비 정보를 불러오지 못했습니다.<br>잠시 후 다시 시도해 주세요.</div>';
+  }
+}
+
+document.getElementById('cat-tabs').addEventListener('click', e => {
+  const tab = e.target.closest('.cat-tab');
+  if (!tab) return;
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  activeCat = tab.dataset.cat;
+  renderCards(allEquip);
+});
+
+loadData();
+</script>
+
+<script>
+(function(){
+  function sendHeight(){
+    var h = document.documentElement.scrollHeight;
+    window.parent.postMessage({type:'iframeHeight',height:h},'*');
+    window.parent.postMessage({type:'iframeWidth',width:'100%'},'*');
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  var mo = new MutationObserver(sendHeight);
+  mo.observe(document.body,{childList:true,subtree:true,attributes:true});
+
+  // Force parent iframe to 100% width from inside
+  try {
+    var style = document.createElement('style');
+    style.textContent = 'iframe{width:100%!important;max-width:100%!important;}';
+    window.parent.document.head.appendChild(style);
+  } catch(e){}
+
+  // Also tell parent via postMessage to resize iframe
+  window.addEventListener('load', function(){
+    window.parent.postMessage({type:'iframeHeight', height: document.body.scrollHeight}, '*');
+  });
+})();
+</script>
+</body>
+</html>
